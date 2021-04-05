@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import getDetails from "../InvoiceGeneration/InvoicePDF";
+import Header1 from "../Header1/Header1";
+import Sidebar from "../Sidebar/Sidebar";
 import "./ManageInvoice.css";
 
 const ManageInvoice = () => {
@@ -110,67 +112,75 @@ const ManageInvoice = () => {
 
   return (
     <div id="container">
-      {/* select_all, delete, sort, filter bar */}
-      <div id="search_filter_add_bar">
-        {/* select_all */}
-        <label htmlFor="select_all--checkbox">
-          <input
-            type="checkbox"
-            name="select_all"
-            id="select_all--checkbox"
-            onChange={() => handleAddAllId()}
-          />
-          select all
-        </label>
+      <Header1 className="item1" />
+      <div className="container_main">
+        <Sidebar className="item2" />
+        {/* select_all, delete, sort, filter bar */}
+        <div className="container_main_right">
+          <div id="search_filter_add_bar" className="item3">
+            {/* select_all */}
+            <label htmlFor="select_all--checkbox">
+              <input
+                type="checkbox"
+                name="select_all"
+                id="select_all--checkbox"
+                onChange={() => handleAddAllId()}
+              />
+              select all
+            </label>
 
-        {/* delete */}
-        <input
-          type="button"
-          value="Delete"
-          onClick={() => handleDeleteInvoice()}
-        />
-        {/* sort */}
-        <input type="button" value="Sort" onClick={() => {}} />
-        {/* filter */}
+            {/* delete */}
+            <input
+              type="button"
+              value="Delete"
+              onClick={() => handleDeleteInvoice()}
+            />
+            {/* sort */}
+            <input type="button" value="Sort" onClick={() => {}} />
+            {/* filter */}
+          </div>
+
+          {/* Cards container with all cards */}
+          <div id="card_container" className="item4">
+            {InvoiceData.map((item, index) => (
+              <Card key={index} className="card_div">
+                <Card.Body className="card_body_div">
+                  <Card.Title>{item.receiver.name}.pdf</Card.Title>
+                  <Card.Text>
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="card_select--checkbox"
+                      onChange={(event) => {
+                        event.target.checked
+                          ? handleAddId(item.InvoiceId)
+                          : handleRemoveId(item.InvoiceId);
+                      }}
+                    />
+                  </Card.Text>
+                  <button onClick={() => getDetails(item)}>Details</button>
+                  <button>Share</button>
+                </Card.Body>
+              </Card>
+            ))}
+          </div>
+
+          {/* Add Invoice button */}
+          <div className="item5">
+            <label htmlFor="addInvoiceFile">
+              <input
+                type="file"
+                accept="application/pdf"
+                multiple
+                name="invoiceFile"
+                id="addInvoiceFile"
+                onChange={(event) => handleAddInvoice(event.target)}
+              />
+              HE
+            </label>
+          </div>
+        </div>
       </div>
-
-      {/* Cards container with all cards */}
-      <div id="card_container">
-        {InvoiceData.map((item, index) => (
-          <Card key={index} className="card_div">
-            <Card.Body className="card_body_div">
-              <Card.Title>{item.receiver.name}.pdf</Card.Title>
-              <Card.Text>
-                <input
-                  type="checkbox"
-                  name=""
-                  id="card_select--checkbox"
-                  onChange={(event) => {
-                    event.target.checked
-                      ? handleAddId(item.InvoiceId)
-                      : handleRemoveId(item.InvoiceId);
-                  }}
-                />
-              </Card.Text>
-              <button onClick={() => getDetails(item)}>Details</button>
-              <button>Share</button>
-            </Card.Body>
-          </Card>
-        ))}
-      </div>
-
-      {/* Add Invoice button */}
-      <label htmlFor="addInvoiceFile">
-        <input
-          type="file"
-          accept="application/pdf"
-          multiple
-          name="invoiceFile"
-          id="addInvoiceFile"
-          onChange={(event) => handleAddInvoice(event.target)}
-        />
-        HE
-      </label>
     </div>
   );
 };

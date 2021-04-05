@@ -78,34 +78,7 @@
   font-size: 2em;
   font-weight: bolder;
 }
-/* .head_style {
-  position: absolute;
-  background: #5273eb;
-  opacity: 1;
-  z-index: -1;
-  transform: rotate(-8deg);
-}
 
-.staff {
-  display: flex;
-  padding: 100px;
-}
-.staff_data {
-  margin: 0px 250px 0px 0px;
-}
-.staff > img {
-  width: 20em;
-}
-.staff_data > p {
-  font-size: 1.4em;
-}
-.staff_data > h2 {
-  font-size: 2em;
-  font-weight: bolder;
-}
-
-
-*/
 @media only screen and (max-width: 900px) {
   .invoice {
     display: flex;
@@ -155,5 +128,47 @@
 @media only screen and (max-width: 450px) {
   .left_leave_home {
     top: 70%;
+  }
+  .invoice {
+    display: flex;
+    padding: 100px 50px 0px 50px;
+  }
+  .invoice > img {
+    width: 30vw;
+    margin-bottom: 25px;
+  }
+  .invoice_data > h2 {
+    text-align: center;
+  }
+  .inventory {
+    padding: 100px 50px 0px 50px;
+  }
+  .inventory_data > h2 {
+    text-align: center;
+  }
+  .inventory > img {
+    width: 30vw;
+    margin-bottom: 25px;
+  }
+  .finance {
+    padding: 100px 50px 0px 50px;
+  }
+  .finance > img {
+    width: 35vw;
+    margin-bottom: 25px;
+  }
+  .finance_data > h2 {
+    text-align: center;
+  }
+  .staff {
+    padding: 100px 50px 0px 50px;
+  }
+  .staff_data > h2 {
+    text-align: center;
+  }
+
+  .staff > img {
+    width: 60vw;
+    margin-bottom: 25px;
   }
 }

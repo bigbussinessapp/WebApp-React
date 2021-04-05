@@ -1,7 +1,6 @@
 import React from "react";
 import "./Registration.css";
 import profileAvtar from "../../assets/profileAvtar.svg";
-// import Avtar from "../../assets/avtar.webp";
 import locationIcon from "../../assets/locationIcon.svg";
 import gstIcon from "../../assets/gstIcon.svg";
 import pinIcon from "../../assets/pinIcon.svg";

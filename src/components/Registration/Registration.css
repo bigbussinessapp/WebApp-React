@@ -49,33 +49,7 @@
   color: white;
   border: none;
 }
-/* .Profile_Main {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    margin-bottom: 50px;
-  }
-  .Profile_Main > h1 {
-    margin: 10px;
-  }
-  .Profile_Main > p {
-    font-size: 1.5em;
-    color: #393e46;
-    margin: 20px;
-  }
-  .Profile_Main > p:hover {
-    font-size: 1.7rem;
-    cursor: pointer;
-  }
-  .Profile_Type {
-    background-color: #393e46;
-    color: white !important;
-  }
-  .Profile_Img {
-    width: fit-content;
-  } */
+
 @media only screen and (max-width: 600px) {
   .profile {
     display: flex;

@@ -58,10 +58,14 @@
 }
 @media only screen and (max-width: 450px) {
   .head {
-    margin: 200px 0px 150px 0px;
+    margin: 200px 0px 100px 0px;
   }
   .head_data > h2 {
-    font-size: 4.5vw;
+    font-size: 6.5vw;
     margin-left: 50px;
+    width: 80vw;
+  }
+  .head_main_icon {
+    width: 60vw;
   }
 }

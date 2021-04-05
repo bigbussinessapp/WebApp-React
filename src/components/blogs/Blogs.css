@@ -23,7 +23,7 @@
   text-align: center;
 }
 .blogs > .p_more > p {
-  font-size: 2vw;
+  font-size: 2.1vw;
   font-weight: normal;
   color: #1d2229;
   white-space: break-spaces;
@@ -35,7 +35,7 @@
 }
 @media only screen and (max-width: 600px) {
   .blogs > .p_more > p {
-    font-size: 15px;
+    font-size: 20px;
     color: #1d2229;
   }
   .blogs > h2 {

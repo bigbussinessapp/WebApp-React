@@ -1,7 +1,6 @@
 .card_div {
   border: 0.2px solid rgba(0, 0, 0, 1);
   background: rgba(255, 239, 228, 1);
-
 }
 
 input[type="file"] {
@@ -22,7 +21,7 @@ input[type="file"] {
   padding: 5px 8px;
   outline: none;
   white-space: nowrap;
-  -webkit-user-select: none;
+
   cursor: pointer;
   text-shadow: 1px 1px #fff;
   font-weight: 700;
@@ -45,4 +44,11 @@ input[type="file"] {
   display: initial;
   width: 0px;
   height: 0px;
+}
+.container_main {
+  display: flex;
+  flex-direction: row;
+}
+.item3 {
+  margin: 20px 20px 0px 0px;
 }

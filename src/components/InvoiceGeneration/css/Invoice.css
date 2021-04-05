@@ -68,3 +68,9 @@ select:hover {
 .label_input_container input {
   display: block;
 }
+.invoice_main {
+  display: flex;
+}
+.invoice_main_right {
+  overflow-x: scroll;
+}

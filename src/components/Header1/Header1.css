@@ -4,8 +4,6 @@
   padding: 0;
   overflow: hidden;
   background-color: #5273eb;
-  /* display: flex;
-  justify-content: center; */
 }
 
 .li_header1 {
@@ -129,5 +127,15 @@
 @media only screen and (max-width: 700px) {
   #main {
     display: block !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .li_end_header1 {
+    margin: 15px 10px 0px 0px;
+  }
+  .li_header1 {
+    float: left;
+    font-size: 1.2em;
+    margin: 5px 0px 0px 10px;
   }
 }

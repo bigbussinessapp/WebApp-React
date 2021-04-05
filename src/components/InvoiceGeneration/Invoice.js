@@ -96,43 +96,47 @@ const Invoice = () => {
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
       <Header1 />
-      <Sidebar />
-      <div id="main_container">
-        <div id="container">
-          <div id="receiver_details_container">
-            <ReceiverDetailsForm receiver={receiver} />
+      <div className="invoice_main">
+        <Sidebar />
+        <div className="invoice_main_right">
+          <div id="main_container">
+            <div id="container">
+              <div id="receiver_details_container">
+                <ReceiverDetailsForm receiver={receiver} />
+              </div>
+              <div id="item_details_container">
+                <ItemDetailsForm item={item} />
+              </div>
+              <label htmlFor="gst">
+                <input
+                  type="checkbox"
+                  name="gst"
+                  id="gst"
+                  checked={GST}
+                  onChange={() => {
+                    setGST(GST ? false : true);
+                    handleReceiverChange({ IncludeGST: GST });
+                  }}
+                />
+                Include GST
+              </label>
+              <button
+                id="generate_invoice--button"
+                onClick={() => generateInvoice()}
+              >
+                Generate Invoice as PDF
+              </button>
+              <ItemDetailsTable itemInputs={itemInputs} />
+              <>
+                {formEmpty &&
+                  setTimeout(() => {
+                    setFormEmpty(false);
+                  }, 5000) && (
+                    <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
+                  )}
+              </>
+            </div>
           </div>
-          <div id="item_details_container">
-            <ItemDetailsForm item={item} />
-          </div>
-          <label htmlFor="gst">
-            <input
-              type="checkbox"
-              name="gst"
-              id="gst"
-              checked={GST}
-              onChange={() => {
-                setGST(GST ? false : true);
-                handleReceiverChange({ IncludeGST: GST });
-              }}
-            />
-            Include GST
-          </label>
-          <button
-            id="generate_invoice--button"
-            onClick={() => generateInvoice()}
-          >
-            Generate Invoice as PDF
-          </button>
-          <ItemDetailsTable itemInputs={itemInputs} />
-          <>
-            {formEmpty &&
-              setTimeout(() => {
-                setFormEmpty(false);
-              }, 5000) && (
-                <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
-              )}
-          </>
         </div>
       </div>
     </InvoiceContext.Provider>
