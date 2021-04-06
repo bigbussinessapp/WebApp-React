@@ -22,7 +22,6 @@ import Profile_Page from "../Profile_Page/Page";
 import RegistrationPage from "../Registration/Registration_Page";
 import StaffAdminDashboard from "../staffManagement/StaffAdminDashboard";
 import StaffManagement from "../staffManagement/StaffManagement";
-import StaffManagement2 from "../StaffManagement2/StaffManagement";
 import PrivateRoute from "./PrivateRoute";
 // this function routes through different components by checking urlpath.
 function Routes() {

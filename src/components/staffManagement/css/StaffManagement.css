@@ -1,5 +1,5 @@
 .adminDashboard {
-  /* display: flex; */
+  display: flex;
   flex-direction: row;
 }
 .admin_staff {
@@ -8,6 +8,116 @@
 .container {
   margin: 0px !important;
 }
-.adminContent{
-  display:flex;
+
+/* ========================= */
+
+#div_container {
+  margin: 30px;
+  display: flex;
+}
+
+#image_list_container {
+  width: 288px;
+}
+
+#emp_image_container {
+  width: 279px;
+  height: 203px;
+  background: #5273eb;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#emp_image_container .emp_image {
+  border-radius: 50%;
+  height: 129.04383850097656px;
+  width: 127px;
+}
+
+#emp_list_container {
+  padding-left: 8px;
+  width: 279px;
+  height: 440px;
+  background: #ffffff;
+  box-shadow: -1px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden auto;
+}
+
+#active_conv_title {
+  margin: 20px 0px 20px 5px;
+}
+
+.no_of_emp {
+  margin-left: 10px;
+  height: 23.765846252441406px;
+  width: 23.959300994873047px;
+  border-radius: 50%;
+  background: rgba(82, 115, 235, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#emp_list_container ul {
+  list-style-type: none;
+  margin: 20px 0px 20px 0px;
+  padding-left: 0px;
+}
+
+#emp_list_container .emp_item {
+  margin: 5px;
+  height: 64px;
+  width: 252px;
+  opacity: 0.8;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 4px rgba(0, 0, 0, 0.25); */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  color: #5273eb;
+  border: none;
+  padding-left: 15px;
+}
+
+#emp_list_container .selected {
+  background: #fac419;
+  color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#emp_list_container .emp_item img {
+  margin-right: 15px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.list-group-item {
+  padding: 0px;
+  border: none;
+}
+
+#archive_chats_title {
+  color: rgba(82, 115, 235, 1);
+}
+
+#archive_chats_title .no_of_emp {
+  color: black;
+  background-color: #f2f2f2;
+}
+
+/* CHAT */
+#chat_container {
+  background: #fdfdfd;
+  box-shadow: -1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 355px;
+  height: 663px;
+  margin-left: 10px;
 }

@@ -1,0 +1,38 @@
+#chat_header {
+  width: inherit;
+  height: 49px;
+  background: #5273eb;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0px 0px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+#chat_box_view{
+  width: inherit;
+}
+
+#chat_messages_view {
+  width: inherit;
+  height: 541px;
+}
+
+#send_message--input {
+  border: none;
+  background: #f4f4f4;
+  border-radius: 10px;
+  width: inherit;
+  height: 73px;
+  color: #5273eb;
+
+  /* font-family: Roboto; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+
+  padding: 10px;
+}

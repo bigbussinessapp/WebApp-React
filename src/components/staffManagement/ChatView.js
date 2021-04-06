@@ -1,14 +1,24 @@
 import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
-import "./css/StaffManagement.css";
+import "./css/ChatView.css";
 
 const ChatView = (props) => {
+  const {
+    staffMember: { firstName, lastName },
+  } = props;
   return (
-    <div className="chatView" style={{ width: "42vw" }}>
-      <div className="textBoxView">
-        <input id="send" type="text" />
-        <p>{props.employeeName}</p>
+    <div className="chatView" id="chat_container">
+      <div id="chat_header">
+        {firstName} {lastName}
+      </div>
+      <div className="textBoxView" id="chat_box_view">
+        <div id="chat_messages_view"></div>
+        <input
+          id="send_message--input"
+          type="text"
+          placeholder="Write Message...."
+        />
       </div>
     </div>
   );
