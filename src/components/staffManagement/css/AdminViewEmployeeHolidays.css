@@ -1,0 +1,48 @@
+#payroll_attendance_view {
+  width: 569px;
+  height: 663px;
+  margin-left: 20px;
+}
+
+#day_picker_container {
+  width: 452px;
+  height: 374px;
+  background: #ffffff;
+  box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 25px 15px;
+  margin-bottom: 20px;
+}
+
+.DayPicker {
+  width: inherit;
+  line-height: 1;
+}
+
+#calendar_view {
+  width: 422px;
+  background: #ffffff;
+  box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#leave_request_container {
+  /* width: 452px; */
+  /* height: 335px; */
+  background: #ffffff;
+  box-shadow: -1px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#remaining_leaves {
+  color: #5273eb;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+#leave_request_table {
+  /* width: inherit; */
+}

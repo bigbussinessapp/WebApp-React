@@ -22,7 +22,6 @@ import Profile_Page from "../Profile_Page/Page";
 import RegistrationPage from "../Registration/Registration_Page";
 import StaffAdminDashboard from "../staffManagement/StaffAdminDashboard";
 import StaffManagement from "../staffManagement/StaffManagement";
-import StaffManagement2 from "../StaffManagement2/StaffManagement";
 import PrivateRoute from "./PrivateRoute";
 // this function routes through different components by checking urlpath.
 function Routes() {
@@ -37,6 +36,9 @@ function Routes() {
       <Route exact path="/BusinessScore" component={Score} />
       <Route exact path="/" component={Home} />
       {/* Complete */}
+      <Route exact path="/dues" component={PaymentDues} />
+      <Route exact path="/remainders" component={PaymentReminders} />
+      <Route exact path="/transactions" component={TransactionsTable} />
       <Route exact path="/RegistrationPage" component={RegistrationPage} />
       <Route exact path="/Page" component={Profile_Page} />
       <Route exact path="/invoicemanage" component={ManageInvoice} />

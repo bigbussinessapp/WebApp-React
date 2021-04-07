@@ -9,7 +9,8 @@ import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
 import "./Table.css";
 import firebase from "../../../containers/Firebase";
-
+import Header1 from "../../Header1/Header1";
+import Sidebar from "../../Sidebar/Sidebar";
 // import transactionIcon from "../../../assets/transactionIcon.svg";
 
 export const TransactionsTable = () => {
@@ -65,17 +66,11 @@ export const TransactionsTable = () => {
 
   return (
     <div className="transaction_table">
-      <h3
-        style={{
-          fontWeight: "lighter",
-          fontSize: "3em",
-          marginLeft: "50px",
-          textAlign: "center",
-        }}
-      >
-        Transactions History
-      </h3>
-      {/* <img className="table_img" src={transactionIcon}></img> */}
+    <Header1 />
+    <div className='web_body'>
+      <Sidebar />
+      <div className='sideContent'>
+      <h3 className='serviceHeader'>Transactions History</h3><br/>
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -110,6 +105,8 @@ export const TransactionsTable = () => {
           })}
         </tbody>
       </table>
+      </div>
+      </div>
     </div>
   );
 };

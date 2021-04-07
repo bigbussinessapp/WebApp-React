@@ -80,7 +80,7 @@
 
 .sidebar {
   background-color: #5273eb;
-  height: 90vh;
+  height: 100%;
   width: fit-content;
   z-index: 1;
   left: 0;
@@ -92,9 +92,10 @@
 }
 .li_side a:hover {
   background-color: #fac419;
+  text-decoration: none;
 }
 .li_side a {
-  padding: 25px 25px 25px 0px;
+  padding: 15px 15px 15px 0px;
   text-decoration: none;
   font-size: 20px;
   color: white;

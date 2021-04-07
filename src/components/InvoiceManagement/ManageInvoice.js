@@ -176,7 +176,6 @@ const ManageInvoice = () => {
                 id="addInvoiceFile"
                 onChange={(event) => handleAddInvoice(event.target)}
               />
-              HE
             </label>
           </div>
         </div>

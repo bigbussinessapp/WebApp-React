@@ -30,6 +30,7 @@ const StaffManagement = () => {
   return (
     <div className="container">
       <Header1 />
+      <div className='web_body'>
       <Sidebar />
       <div
         className="container_cards"
@@ -56,6 +57,7 @@ const StaffManagement = () => {
           onChange={(e) => setEmployeeData(store.getState().employeeData)}
           {...employeeData}
         />
+      </div>
       </div>
     </div>
   );

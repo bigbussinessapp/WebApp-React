@@ -5,6 +5,8 @@ import { SiAddthis } from "react-icons/si";
 import NewReminder from "./NewReminder";
 import firebase from "../../../containers/Firebase";
 
+import Header1 from "../../Header1/Header1";
+import Sidebar from "../../Sidebar/Sidebar";
 
 const PaymentReminders = (props) => {
   const [showNewReminder, setshowNewReminder] = useState(false);
@@ -36,6 +38,12 @@ const PaymentReminders = (props) => {
 
   return (
     <div>
+    <Header1 />
+    <div className='web_body'>
+      <Sidebar />
+      <div className='sideContent'>
+      <h2 className='serviceHeader'>Remainders</h2>
+
       <h2 style={{ fontWeight: "lighter",marginLeft:"20px"}}>
         {props.title}{" "}
         <SiAddthis
@@ -46,6 +54,8 @@ const PaymentReminders = (props) => {
       </h2>
       {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
       <Reminder redata={redata} onDelete={DeleteReminder} />
+    </div>
+    </div>
     </div>
   );
 };

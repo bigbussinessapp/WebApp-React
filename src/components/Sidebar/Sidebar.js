@@ -20,22 +20,46 @@ function Sidebar() {
           </Link>
         </li>
         <li className="li_side">
+          <Link to="/invoicemanage">
+            <img src={sidebarStaffIcon}></img>
+            Invoice 2
+          </Link>
+        </li>
+        <li className="li_side">
           <Link to="/inventory">
             <img src={sidebarInvtIcon}></img>
             Inventory
           </Link>
         </li>
         <li className="li_side ">
-          <Link to="/mainfinance">
+          <Link to="/transactions">
             <img src={sidebarFinIcon}></img>
-            Finance
+            Transactions
           </Link>
         </li>
+        <li className="li_side ">
+        <Link to="/remainders">
+          <img src={sidebarFinIcon}></img>
+          Remainders
+        </Link>
+      </li>
+      <li className="li_side ">
+      <Link to="/dues">
+        <img src={sidebarFinIcon}></img>
+         Dues
+      </Link>
+    </li>
 
         <li className="li_side">
           <Link to="/staff">
             <img src={sidebarStaffIcon}></img>
             Staff
+          </Link>
+        </li>
+        <li className="li_side">
+          <Link to="/admin">
+            <img src={sidebarStaffIcon}></img>
+            Staff 2
           </Link>
         </li>
       </div>
