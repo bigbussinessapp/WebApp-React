@@ -8,6 +8,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import store from "../redux-state-management/store";
 
 import StaffMemberCards from "./StaffMemberCards";
+import "./css/StaffManagement.css";
 
 const StaffManagement = () => {
   const [employeeData, setEmployeeData] = useState();
@@ -28,7 +29,7 @@ const StaffManagement = () => {
       });
   }, []);
   return (
-    <div className="container">
+    <div className="">
       <Header1 />
       <div className='web_body'>
         <Sidebar />
@@ -38,9 +39,7 @@ const StaffManagement = () => {
           <div className="container_cards"
             style={{
               width: showPayrollView ? "40vw" : "95vw",
-              display: "flex",
-              padding: "20px",
-              justifyContent: "space-between",
+              
             }}
             onClick={() => {
               document.getElementsByClassName("container_cards")[0].style.display =
