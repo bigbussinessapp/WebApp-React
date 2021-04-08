@@ -48,7 +48,7 @@ const Inventory = (props) => {
   }
 
   return (
-    <div className="page">
+    <div className="page invetory">
       <Header1 />
       <div className='web_body'>
         <Sidebar />

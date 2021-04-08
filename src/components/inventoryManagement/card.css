@@ -13,13 +13,15 @@
 }
 .view {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .buttonUpdate {
   padding: 0 !important;
 }
 .cards_container {
   margin-left: 10px;
-  display: flex;
+  display: contents;
 }
 .cards_container .card {
   padding: 12px;
