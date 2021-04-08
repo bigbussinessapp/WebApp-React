@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import "./Remainder.css";
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 const Reminder = ({ redata, onDelete }) => {
   return (
     <div className="remainder_main">
@@ -23,18 +23,18 @@ const Reminder = ({ redata, onDelete }) => {
                 border: "2px solid black",
                 width: "15vw",
                 boxSizing: "border-box",
-                margin:'10px'
+                margin: '10px'
               }}
             >
               <h5>
                 Name :{task.title}
-                
+
               </h5>
               <p>Amount :{task.amount} </p>
               <p style={{ width: "100px" }}>Date :{task.reminderDate}</p>
-              
-              <Button>Delete </Button>{'   '}<Button>Edit </Button> 
-              
+
+              <Button>Delete </Button>{'   '}<Button>Edit </Button>
+
             </div>
           ))}
         </div>

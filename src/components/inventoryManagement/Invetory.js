@@ -16,6 +16,7 @@ let items = [
 ];
 const Inventory = (props) => {
   let [items, setItems] = useState([]);
+  let [allItemList,setAllItemsList] = useState([]);
   //For page load events
   useEffect(() => {
     firebase.database
@@ -29,6 +30,7 @@ const Inventory = (props) => {
           vals[i].id = keys[i];
         }
         setItems(vals);
+        setAllItemsList(vals);
       });
   }, []);
   let defaultProps = {
@@ -36,73 +38,71 @@ const Inventory = (props) => {
     pruductPrice: "",
     productQuantity: "",
   };
+  function searchItem(val){
+    let resVals = []
+    allItemList.map((item)=>{
+      if(item.name.toLowerCase().includes(val.toLowerCase()))
+      resVals.push(item);
+    });
+    setItems(resVals);
+  }
 
   return (
     <div className="page">
       <Header1 />
       <div className='web_body'>
-      <Sidebar />
-      <div className='sideContent'>
-      <h2 className='serviceHeader'>Inventory</h2>
-      <form>
-        <input
-          className="input_search inpIcon"
-          type="text"
-          name="name"
-          placeholder="Search Item"
-        />
-        <SearchIcon />
-        {"       "}
-        <Sort />
-        {"    "}
-        <i class="fas fa-filter inpIcon"></i>
-        {"    "}
-        <InventoryItem
-          className="addItem inpIcon"
-          itemState="Add Item"
-          valChange="Add"
-        />
-      </form>
-      <div className="view">
-        <div className="cards_container">
-          {items.map((ele, index) => {
-            return (
-              <div className="inventoryItem">
-                <Card>
-                  <Card.Body>
-                    <Card.Text>
-                      <h3>{ele.name}</h3>{" "}
-                      <p>
-                        {ele.quantity} {ele.uom}
-                      </p>
-                      <br />
+        <Sidebar />
+        <div className='sideContent'>
+          <h2 className='serviceHeader'>Inventory</h2>
+          <form>
+            <input className="input_search inpIcon" type="text" name="name" placeholder="Search Item" onChange={(e)=> searchItem(e.target.value)}/>
+            <SearchIcon />
+            {"       "}
+            <Sort />
+            {"    "}
+            <i class="fas fa-filter inpIcon"></i>
+            {"    "}
+            <InventoryItem
+              className="addItem inpIcon"
+              itemState="Add Item"
+              valChange="Add"
+            />
+          </form>
+          <div className="view">
+            <div className="cards_container">
+              {items.map((ele, index) => {
+                return (
+                  <div className="inventoryItem">
+                    <Card>
+                      <Card.Body>
+                        <Card.Text>
+                          <div className='inventoryCardHeader'>
+                            <h3>{ele.name}</h3><span>&nbsp;&nbsp;&nbsp;</span>
+                            <text>{ele.quantity} {ele.uom}</text>
+                            <input type='checkbox' className='inventoryCheckbox' />
+                          </div>
+                          <br />
                       Price : <span>&#8377;</span>
-                      {ele.price}
-                      <br />
+                          {ele.price}
+                          <br />
                       Quantity : {ele.quantity}
-                    </Card.Text>
-                    <InventoryItem
-                      itemState="Edit Item"
-                      prodName={ele.name}
-                      productPrice={ele.price}
-                      productQuantity={ele.quantity}
-                      valChange="Update"
-                    />
-                    <InventoryItem
-                      itemState="Delete Item"
-                      prodName={ele.name}
-                      productPrice={ele.price}
-                      productQuantity={ele.quantity}
-                      valChange="Delete"
-                    />
-                  </Card.Body>
-                </Card>
-              </div>
-            );
-          })}
+                        </Card.Text>
+                        <InventoryItem
+                          itemState="Edit Item"
+                          prodName={ele.name}
+                          productPrice={ele.price}
+                          productQuantity={ele.quantity}
+                          valChange="Update"
+                        />
+
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
       </div>
     </div>
   );

@@ -38,24 +38,24 @@ const PaymentReminders = (props) => {
 
   return (
     <div>
-    <Header1 />
-    <div className='web_body'>
-      <Sidebar />
-      <div className='sideContent'>
-      <h2 className='serviceHeader'>Remainders</h2>
+      <Header1 />
+      <div className='web_body'>
+        <Sidebar />
+        <div className='sideContent'>
+          <h2 className='serviceHeader'>Remainders</h2>
 
-      <h2 style={{ fontWeight: "lighter",marginLeft:"20px"}}>
-        {props.title}{" "}
-        <SiAddthis
-          style={{ color: !showNewReminder ? "blue" : "red" }}
-          onClick={() => setshowNewReminder(!showNewReminder)}
-          title="Click to Add New Reminder."
-        />
-      </h2>
-      {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
-      <Reminder redata={redata} onDelete={DeleteReminder} />
-    </div>
-    </div>
+          <h2 style={{ fontWeight: "lighter", marginLeft: "20px" }}>
+            {props.title}{" "}
+            <SiAddthis
+              style={{ color: !showNewReminder ? "blue" : "red" }}
+              onClick={() => setshowNewReminder(!showNewReminder)}
+              title="Click to Add New Reminder."
+            />
+          </h2>
+          {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
+          <Reminder redata={redata} onDelete={DeleteReminder} />
+        </div>
+      </div>
     </div>
   );
 };

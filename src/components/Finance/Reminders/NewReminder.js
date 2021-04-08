@@ -13,7 +13,7 @@ const NewReminder = ({ onSaveReminder }) => {
       alert("Please add a name!");
       return;
     }
-    onSaveReminder({ title, amount,paymentType, reminderDate,status:'Unpaid'});
+    onSaveReminder({ title, amount, paymentType, reminderDate, status: 'Unpaid' });
     setName("");
     setAmount("");
     setDate("");
