@@ -31,35 +31,38 @@ const StaffManagement = () => {
     <div className="container">
       <Header1 />
       <div className='web_body'>
-      <Sidebar />
-      <div
-        className="container_cards"
-        style={{
-          width: showPayrollView ? "40vw" : "95vw",
-          display: "flex",
-          padding: "20px",
-          justifyContent: "space-between",
-        }}
-        onClick={() => {
-          document.getElementsByClassName("container_cards")[0].style.display =
-            "block";
-          document.getElementsByClassName("container_cards")[0].style.width =
-            "fit-content";
-        }}
-      >
-        {employeesData.map((staffMembers) => {
-          return <StaffMemberCards staffDetails={staffMembers} />;
-        })}
+        <Sidebar />
+        <div className='sideContent'>
+          <h2 className='serviceHeader'>Staff Payroll</h2>
+
+          <div className="container_cards"
+            style={{
+              width: showPayrollView ? "40vw" : "95vw",
+              display: "flex",
+              padding: "20px",
+              justifyContent: "space-between",
+            }}
+            onClick={() => {
+              document.getElementsByClassName("container_cards")[0].style.display =
+                "block";
+              document.getElementsByClassName("container_cards")[0].style.width =
+                "fit-content";
+            }}
+          >
+            {employeesData.map((staffMembers) => {
+              return <StaffMemberCards staffDetails={staffMembers} />;
+            })}
+          </div>
+          <div className="payrollBreakup">
+            <PayRollBreakFC
+              PayrollView={showPayrollView}
+              onChange={(e) => setEmployeeData(store.getState().employeeData)}
+              {...employeeData}
+            />
+          </div>
+        </div>
       </div>
-      <div className="payrollBreakup">
-        <PayRollBreakFC
-          PayrollView={showPayrollView}
-          onChange={(e) => setEmployeeData(store.getState().employeeData)}
-          {...employeeData}
-        />
       </div>
-      </div>
-    </div>
   );
 };
 

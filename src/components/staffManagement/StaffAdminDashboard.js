@@ -52,6 +52,8 @@ const StaffAdminDashboard = (props) => {
       <Header1 />
       <div className="web_body">
         <Sidebar />
+        <div className='sideContent'>
+          <h2 className='serviceHeader'>Staff Management</h2>
         <div className="adminDashboard" id="div_container">
           <div className="admin_staff" id="image_list_container">
             <div id="emp_image_container">
@@ -104,6 +106,7 @@ const StaffAdminDashboard = (props) => {
           <AdminViewEmployeeHolidays leaves={leaves} holidays={holidays} />
         </div>
       </div>
+    </div>
     </div>
   );
 };

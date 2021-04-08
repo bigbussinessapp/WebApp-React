@@ -115,6 +115,8 @@ const ManageInvoice = () => {
       <Header1 className="item1" />
       <div className="container_main">
         <Sidebar className="item2" />
+        <div className='sideContent'>
+        <h2 className='serviceHeader'>Invoice Management</h2>
         {/* select_all, delete, sort, filter bar */}
         <div className="container_main_right">
           <div id="search_filter_add_bar" className="item3">
@@ -180,6 +182,7 @@ const ManageInvoice = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
