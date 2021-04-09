@@ -77,15 +77,6 @@
 #main {
   transition: margin-left 0.5s;
 }
-
-.sidebar {
-  background-color: #5273eb;
-  height: 100%;
-  width: fit-content;
-  z-index: 1;
-  left: 0;
-  top: 10%;
-}
 .li_side {
   width: 250px;
   list-style: none;
@@ -128,6 +119,9 @@
 @media only screen and (max-width: 700px) {
   #main {
     display: block !important;
+  }
+  .li_img_logo {
+    display: none;
   }
 }
 @media only screen and (max-width: 450px) {

@@ -72,5 +72,5 @@ select:hover {
   display: flex;
 }
 .invoice_main_right {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
