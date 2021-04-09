@@ -1,6 +1,8 @@
 .card_div {
   border: 0.2px solid rgba(0, 0, 0, 1);
   background: rgba(255, 239, 228, 1);
+  margin:10px;
+  width:250px;
 }
 
 input[type="file"] {
@@ -51,4 +53,14 @@ input[type="file"] {
 }
 .item3 {
   margin: 20px 20px 0px 0px;
+}
+
+.invoiceCardHeader{
+  display:flex;
+}
+.invoiceCardHeader p.card-text {
+  margin-left:auto;
+}
+.invoiceBtn{
+  margin:5px;
 }

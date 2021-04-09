@@ -11,7 +11,7 @@
   border: 1px solid black;
   border-radius: 5px;
   margin-bottom: 10px;
-  padding: 0px 30px 15px 30px;
+  padding: 0px 30px 25px 30px;
   max-width: 1070px;
 }
 
@@ -71,6 +71,6 @@ select:hover {
 .invoice_main {
   display: flex;
 }
-.invoice_main_right {
-  /* overflow-x: scroll; */
+.sideContent {
+  margin: 10px;
 }

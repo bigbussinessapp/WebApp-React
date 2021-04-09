@@ -99,8 +99,9 @@ const Invoice = () => {
       <div className="invoice_main">
         <Sidebar />
         <div className="invoice_main_right">
-          <div id="main_container">
-            <div id="container">
+          <div className="sideContent">
+          <div id="container">
+          <h2 className='serviceHeader'>Invoice Generation</h2>
               <div id="receiver_details_container">
                 <ReceiverDetailsForm receiver={receiver} />
               </div>
@@ -127,18 +128,18 @@ const Invoice = () => {
                 Generate Invoice as PDF
               </button>
               <ItemDetailsTable itemInputs={itemInputs} />
-              <>
+              <div>
                 {formEmpty &&
                   setTimeout(() => {
                     setFormEmpty(false);
                   }, 5000) && (
                     <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
                   )}
-              </>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </InvoiceContext.Provider>
   );
 };

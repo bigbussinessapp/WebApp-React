@@ -47,4 +47,11 @@
   .image {
     width: 30vw;
   }
+  .slider {
+    position: relative;
+    height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,8 +1,3 @@
-/* .input1{
-    width:70vw;
-    margin-left:20px;
-} */
-
 .image {
   width: 25vw;
 }
@@ -13,17 +8,19 @@
 }
 .view {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .buttonUpdate {
   padding: 0 !important;
 }
 .cards_container {
   margin-left: 10px;
-  display: flex;
+  display: contents;
 }
 .cards_container .card {
   padding: 12px;
-  width:300px;
+  width: 300px;
 }
 .inventoryItem {
   padding: 10px;
@@ -36,19 +33,22 @@
 .inventoryItem .card .card-body {
   padding: 0px;
 }
-.page {
-  margin-left: 10px;
-}
+
 .inpIcon {
   margin: 10px;
 }
-.inventoryCardHeader{
+.inventoryCardHeader {
   display: flex;
 }
-.inventoryCardHeader text{
-  margin-top:10px;
-  width:75px;
+.inventoryCardHeader text {
+  margin-top: 10px;
+  width: 75px;
 }
-.inventoryCheckbox{
-  margin-left:auto;
+.inventoryCheckbox {
+  margin-left: auto;
+}
+@media only screen and (max-width: 600px) {
+  .buttonStyle {
+    float: unset !important;
+  }
 }
