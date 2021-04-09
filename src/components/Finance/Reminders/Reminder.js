@@ -7,21 +7,13 @@ const Reminder = ({ redata, onDelete }) => {
     <div className="remainder_main">
       <div className="remainder_table">
         <p>{redata.id}</p>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+        <div className='remainderCardsView'>
           {redata.map((task, index) => (
             <div className='financeCard'
               key={index}
               style={{
                 padding: "30px",
                 border: "2px solid black",
-                width: "15vw",
                 boxSizing: "border-box",
                 margin: '10px'
               }}

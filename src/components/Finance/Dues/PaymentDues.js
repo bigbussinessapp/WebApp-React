@@ -32,7 +32,6 @@ const PaymentDues = () => {
                 style={{
                   padding: "30px",
                   border: "2px solid black",
-                  width: "15vw",
                   boxSizing: "border-box",
                   margin: '10px'
                 }}

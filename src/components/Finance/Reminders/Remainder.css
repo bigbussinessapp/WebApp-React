@@ -15,5 +15,11 @@
   border: "2px solid black";
   min-width: 10vw;
   margin:'10px';
+  /* display: contents; */
   box-sizing: border-box;
+}
+.remainderCardsView{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
