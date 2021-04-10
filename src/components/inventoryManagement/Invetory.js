@@ -10,7 +10,7 @@ import FilterListIcon from "@material-ui/icons/FilterList";
 import firebase from "../../containers/Firebase";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
-
+import ApiCalls from '../../containers/apiCalls'
 let items = [
   { productName: "Brush", productPrice: "20", productQuantity: "5" },
 ];
@@ -32,6 +32,7 @@ const Inventory = (props) => {
         setItems(vals);
         setAllItemsList(vals);
       });
+      new ApiCalls().apiCall('invoice')
   }, []);
   let defaultProps = {
     productName: "",

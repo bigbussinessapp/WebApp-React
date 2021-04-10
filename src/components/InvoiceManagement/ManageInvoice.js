@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import getDetails from "../InvoiceGeneration/InvoicePDF";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
 import "./ManageInvoice.css";
 import "./card.css";
+import ApiCalls from '../../containers/apiCalls';
 const ManageInvoice = () => {
+  useEffect(()=>{
+    console.log("App loading");
+    new ApiCalls().apiCall('invoice','get').then(
+      res =>{
+        console.log("This is inventory data from backend");
+        console.log(res);
+      }
+    ).catch(
+      resolve =>{
+        console.log(resolve);
+      }
+    )
+  }, []);
   const SampleInvoiceData = [
     {
       InvoiceId: "12345",
@@ -109,6 +123,7 @@ const ManageInvoice = () => {
   };
 
   const [CheckInvoiceCard, setCheckInvoiceCard] = useState(false);
+  
 
   return (
     <div id="container">
