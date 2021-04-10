@@ -42,3 +42,8 @@
     font-size: 6vw;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .blogs > .p_more > p {
+    font-size: 25px;
+  }
+}

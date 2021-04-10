@@ -8,6 +8,8 @@ import sidebarFinIcon from "../../assets/sidebarFinIcon.svg";
 import sidebarInvtIcon from "../../assets/sidebarInvtIcon.svg";
 import sidebarStaffIcon from "../../assets/sidebarStaffIcon.svg";
 import sidebarInvoIcon from "../../assets/sidebarInvoIcon.svg";
+import sidebarRemainIcon from "../../assets/sidebarRemainIcon.svg";
+import sidebarDueIcon from "../../assets/sidebarDueIcon.svg";
 // import { Link } from "react-scroll";
 // import { TransactionsTable } from '../Finance/Tables/TransactionsTable';
 //this func returns header and Transaction table as of now
@@ -93,6 +95,21 @@ function Header() {
           <Link to="/staff">
             <img src={sidebarStaffIcon}></img>
             Staff
+          </Link>
+
+          <Link to="/transactions">
+            <img src={sidebarFinIcon}></img>
+            Transactions
+          </Link>
+
+          <Link to="/remainders">
+            <img src={sidebarRemainIcon}></img>
+            Remainders
+          </Link>
+
+          <Link to="/dues">
+            <img src={sidebarDueIcon}></img>
+            Dues
           </Link>
         </div>
       </li>

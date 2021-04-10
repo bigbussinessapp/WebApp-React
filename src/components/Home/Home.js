@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import "./Home.css";
 import aboutIcon from "../../assets/aboutIcon.svg";
+import homeIcon from "../../assets/homeIcon.svg";
+import joinIcon from "../../assets/joinIcon.svg";
 import Feature from "./Feature";
 import BlogImg from "./Blog_img";
 import Contact from "./Contact";
@@ -27,7 +29,16 @@ function Home() {
           <h2>
             Big business is building an ecosystem for trustworthy businesses.
           </h2>
-          <div className="login_option">
+          <div className="join_home">
+            <div className="join_home_button">
+              <img src={joinIcon}></img>
+              <p>Join Now</p>
+            </div>
+            <p>
+              Join our community to <strong>get unlimited</strong> benefits
+            </p>
+          </div>
+          {/* <div className="login_option">
             {state.loginsuccess === false ? <LoginMain /> : <div></div>}
             {state.loginsuccess === true ? (
               <div>
@@ -38,7 +49,7 @@ function Home() {
                     alt=""
                   />
                   <strong className="mr-auto">Authentication Status</strong>
-                  {/* <small> 1 mins ago</small> */}
+                  <small> 1 mins ago</small>
                 </div>
                 <Toast.Body>
                   {state.UserPhoneNumber + " logged in successfully."}
@@ -48,6 +59,7 @@ function Home() {
               <div></div>
             )}
           </div>
+        </div> */}
         </div>
       </div>
 

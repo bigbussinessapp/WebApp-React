@@ -22,4 +22,12 @@
 
 ::-webkit-scrollbar-track {
   background: #ffffff;
+  margin: "10px";
+  /* display: contents; */
+  box-sizing: border-box;
+}
+.remainderCardsView {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }

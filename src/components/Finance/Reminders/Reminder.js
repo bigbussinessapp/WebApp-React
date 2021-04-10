@@ -7,7 +7,7 @@ const Reminder = ({ redata, onDelete }) => {
     <div className="remainder_main">
       <div className="remainder_table">
         <p>{redata.id}</p>
-        <div>
+        <div className="remainderCardsView">
           {redata.map((task, index) => (
             <div
               className="financeCard"

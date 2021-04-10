@@ -1,9 +1,9 @@
 .contact {
   display: flex;
-  padding: 100px 0px 100px 20px;
+  padding: 100px 0px 50px 20px;
 }
 .contact_data {
-  margin: 70px 250px 0px 0px;
+  margin: 70px 200px 0px 0px;
 }
 .contact > img {
   width: 30em;
@@ -34,14 +34,23 @@
     margin: 0;
   }
   .contact > img {
-    width: 20em;
+    width: 25em;
   }
   .left_leave {
     position: absolute;
     z-index: -1;
     margin-bottom: 100px;
   }
+  .contact > img {
+    width: 25em;
+  }
 }
+@media only screen and (max-width: 850px) {
+  .contact_data {
+    margin: 0;
+  }
+}
+
 @media only screen and (min-width: 700px) and(max-width: 1000px) {
   .contact_icons {
     display: flex;
@@ -51,5 +60,10 @@
   }
   .contact_data {
     margin: 0;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .contact > img {
+    width: 15em;
   }
 }
