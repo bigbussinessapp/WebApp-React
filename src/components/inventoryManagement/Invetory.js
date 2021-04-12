@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card } from "react-bootstrap";
-import InventoryItem from "./InventoryItem";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./card.css";
-import { connect } from "react-redux";
-import Sort from "@material-ui/icons/Sort";
 import SearchIcon from "@material-ui/icons/Search";
-import FilterListIcon from "@material-ui/icons/FilterList";
+import SortIcon from "@material-ui/icons/Sort";
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useEffect, useState } from "react";
+import { Card } from "react-bootstrap";
+import { connect } from "react-redux";
 import firebase from "../../containers/Firebase";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
+import "./card.css";
+import InventoryItem from "./InventoryItem";
 
 let items = [
   { productName: "Brush", productPrice: "20", productQuantity: "5" },
 ];
+
 const Inventory = (props) => {
   let [items, setItems] = useState([]);
-  let [allItemList,setAllItemsList] = useState([]);
+  let [allItemList, setAllItemsList] = useState([]);
+
   //For page load events
   useEffect(() => {
     firebase.database
@@ -33,35 +34,62 @@ const Inventory = (props) => {
         setAllItemsList(vals);
       });
   }, []);
+
   let defaultProps = {
     productName: "",
     pruductPrice: "",
     productQuantity: "",
   };
-  function searchItem(val){
-    let resVals = []
-    allItemList.map((item)=>{
-      if(item.name.toLowerCase().includes(val.toLowerCase()))
-      resVals.push(item);
+
+  function searchItem(val) {
+    let resVals = [];
+    allItemList.map((item) => {
+      if (item.name.toLowerCase().includes(val.toLowerCase()))
+        resVals.push(item);
     });
     setItems(resVals);
   }
 
+  function deleteItem(val) {}
+
+  function sortItems() {}
+
   return (
     <div className="page invetory">
       <Header1 />
-      <div className='web_body'>
+      <div className="web_body">
         <Sidebar />
-        <div className='sideContent'>
-          <h2 className='serviceHeader'>Inventory</h2>
+        <div className="sideContent">
+          <h2 className="serviceHeader">Inventory</h2>
           <form>
-            <input className="input_search inpIcon" type="text" name="name" placeholder="Search Item" onChange={(e)=> searchItem(e.target.value)}/>
+          {/* select all, delete,sort, filter  */}
+
+          {/* Select All */}
+
+          {/* Delete  */}
+
+            <input
+              className="input_search inpIcon"
+              type="text"
+              name="name"
+              placeholder="Search Item"
+              onChange={(e) => searchItem(e.target.value)}
+            />
             <SearchIcon />
             {"       "}
-            <Sort />
+
+            <input
+              type="button"
+              onClick={() => console.log("Clilced Delete")}
+            />
+            {/* sort */}
+            <SortIcon />
             {"    "}
+
+            {/* filter */}
             <i class="fas fa-filter inpIcon"></i>
             {"    "}
+
             <InventoryItem
               className="addItem inpIcon"
               itemState="Add Item"
@@ -76,16 +104,22 @@ const Inventory = (props) => {
                     <Card>
                       <Card.Body>
                         <Card.Text>
-                          <div className='inventoryCardHeader'>
-                            <h3>{ele.name}</h3><span>&nbsp;&nbsp;&nbsp;</span>
-                            <text>{ele.quantity} {ele.uom}</text>
-                            <input type='checkbox' className='inventoryCheckbox' />
+                          <div className="inventoryCardHeader">
+                            <h3>{ele.name}</h3>
+                            <span>&nbsp;&nbsp;&nbsp;</span>
+                            <text>
+                              {ele.quantity} {ele.uom}
+                            </text>
+                            <input
+                              type="checkbox"
+                              className="inventoryCheckbox"
+                            />
                           </div>
                           <br />
-                      Price : <span>&#8377;</span>
+                          Price : <span>&#8377;</span>
                           {ele.price}
                           <br />
-                      Quantity : {ele.quantity}
+                          Quantity : {ele.quantity}
                         </Card.Text>
                         <InventoryItem
                           itemState="Edit Item"
@@ -94,7 +128,6 @@ const Inventory = (props) => {
                           productQuantity={ele.quantity}
                           valChange="Update"
                         />
-
                       </Card.Body>
                     </Card>
                   </div>

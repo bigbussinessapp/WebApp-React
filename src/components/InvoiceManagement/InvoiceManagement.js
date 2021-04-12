@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
-import getDetails from "../InvoiceGeneration/InvoicePDF";
 import Header1 from "../Header1/Header1";
+import getDetails from "../InvoiceGeneration/InvoicePDF";
 import Sidebar from "../Sidebar/Sidebar";
-import "./ManageInvoice.css";
 import "./card.css";
-const ManageInvoice = () => {
+import "./InvoiceManagement.css";
+
+const InvoiceManagement = () => {
+  const [sortValue, setSortValue] = useState(true);
+
+  let lowSortFn = (a, b) => a.receiver.name < b.receiver.name;
+  let highSortFn = (a, b) => a.receiver.name > b.receiver.name;
+
   const SampleInvoiceData = [
     {
       InvoiceId: "12345",
@@ -44,7 +50,9 @@ const ManageInvoice = () => {
       ],
     },
   ];
-  const [InvoiceData, setInvoiceData] = useState(SampleInvoiceData);
+  const [InvoiceData, setInvoiceData] = useState(
+    SampleInvoiceData.sort(highSortFn)
+  );
   console.log(`InvoiceData -> `, InvoiceData);
 
   // Array of ID's that are selected
@@ -60,8 +68,8 @@ const ManageInvoice = () => {
       if (file.size / (1024 * 1024) < 2) {
         let d = new Date(file.lastModified);
         let ddmmyyyy = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
-
         let name = file.name;
+
         return {
           InvoiceId: String(Math.random()).substring(2),
           CreationDate: ddmmyyyy,
@@ -80,11 +88,13 @@ const ManageInvoice = () => {
             { id: 123456, name: "UnParsed", quantity: "0", rate: "0" },
           ],
         };
-
-        setInvoiceData([...InvoiceData, ...InvoiceObjectArray]);
       } else alert(`${file.name} - File Size must be less than 2 mb`);
     });
 
+    setInvoiceData([
+      ...InvoiceData,
+      ...[...InvoiceObjectArray.filter((file) => file !== undefined)],
+    ]);
     console.log(InvoiceData);
   };
   const RemoveInvoice = (id) =>
@@ -110,26 +120,55 @@ const ManageInvoice = () => {
 
   const [CheckInvoiceCard, setCheckInvoiceCard] = useState(false);
 
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [input])
+  // setInvoiceData(InvoiceData.sort(lowSortFn))
+
   return (
     <div id="container">
       <Header1 className="item1" />
       <div className="container_main">
         <Sidebar className="item2" />
-        <div className='sideContent'>
-          <h2 className='serviceHeader'>Invoice Management</h2>
+        <div className="sideContent">
+          <h2 className="serviceHeader">Invoice Management</h2>
           {/* select_all, delete, sort, filter bar */}
           <div className="container_main_right">
             <div id="search_filter_add_bar" className="item3">
               {/* select_all */}
               <label htmlFor="select_all--checkbox">
-                <input type="checkbox" name="select_all" id="select_all--checkbox" onChange={() => handleAddAllId()}/>
-              <span>&nbsp;</span>Select All
-            </label>
+                <input
+                  type="checkbox"
+                  name="select_all"
+                  id="select_all--checkbox"
+                  onChange={() => handleAddAllId()}
+                />
+                <span>&nbsp;</span>Select All
+              </label>
 
               {/* delete */}
-              <input className='invoiceBtn' type="button" value="Delete" onClick={() => handleDeleteInvoice()}/>
+              <input
+                className="invoiceBtn"
+                type="button"
+                value="Delete"
+                onClick={() => handleDeleteInvoice()}
+              />
               {/* sort */}
-              <input className='invoiceBtn' type="button" value="Sort" onClick={() => { }} />
+              <input
+                className="invoiceBtn"
+                type="button"
+                value="Sort"
+                onClick={() => {
+                  setSortValue(sortValue ? false : true);
+                  console.log("clicked on sort", sortValue);
+                  setInvoiceData(
+                    InvoiceData.sort(sortValue ? lowSortFn : highSortFn)
+                  );
+                }}
+              />
               {/* filter */}
             </div>
 
@@ -139,17 +178,31 @@ const ManageInvoice = () => {
                 <Card key={index} className="card_div">
                   <Card.Body className="card_body_div">
                     <div className="invoiceCardHeader">
-                      <Card.Title>{item.receiver.name}.pdf</Card.Title>
+                      <Card.Title
+                        id="invoice_card_title"
+                        onClick={() => getDetails(item)}
+                      >
+                        {item.receiver.name}.pdf
+                      </Card.Title>
                       <Card.Text>
-                        <input type="checkbox" name="" id="card_select--checkbox"
+                        <input
+                          type="checkbox"
+                          name={`${item.InvoiceId}_ic`}
+                          id="card_select--checkbox"
                           onChange={(event) => {
-                            event.target.checked ? handleAddId(item.InvoiceId) : handleRemoveId(item.InvoiceId);
+                            event.target.checked
+                              ? handleAddId(item.InvoiceId)
+                              : handleRemoveId(item.InvoiceId);
                           }}
                         />
                       </Card.Text>
                     </div>
-                    <button className='invoiceBtn' onClick={() => getDetails(item)}>Details</button>
-                    <button className='invoiceBtn' >Share</button>
+                    <button className="invoice_card_btn invoiceBtn">
+                      Details
+                    </button>
+                    <button className="invoice_card_btn invoiceBtn">
+                      Share
+                    </button>
                   </Card.Body>
                 </Card>
               ))}
@@ -175,7 +228,7 @@ const ManageInvoice = () => {
   );
 };
 
-export default ManageInvoice;
+export default InvoiceManagement;
 // invoicetable
 
 // a = [
