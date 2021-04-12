@@ -12,7 +12,7 @@ import Dashboard from "../Home/Dashboard";
 import Home from "../Home/Home";
 import Inventory from "../inventoryManagement/Invetory";
 import Invoice from "../InvoiceGeneration/Invoice";
-import ManageInvoice from "../InvoiceManagement/ManageInvoice";
+import InvoiceManagement from "../InvoiceManagement/InvoiceManagement";
 
 import LoginMain from "../login/LoginMain";
 import RegisterMain from "../login/RegisterMain";
@@ -41,7 +41,7 @@ function Routes() {
       <Route exact path="/transactions" component={TransactionsTable} />
       <Route exact path="/RegistrationPage" component={RegistrationPage} />
       <Route exact path="/Page" component={Profile_Page} />
-      <Route exact path="/invoicemanage" component={ManageInvoice} />
+      <Route exact path="/invoicemanage" component={InvoiceManagement} />
       <Route exact path="/mainfinance" component={MainFinance} />
       <Route exact path="/invoice" component={Invoice} />
       <Route exact path="/inventory" component={Inventory} />
@@ -64,7 +64,7 @@ function Routes() {
       {/* <PrivateRoute
         exact
         path="/invoicemanage"
-        component={ManageInvoiceTable}
+        component={InvoiceManagementTable}
       /> */}
       {/* <PrivateRoute exact path="/admin" component={StaffAdminDashboard} /> */}
     </Switch>

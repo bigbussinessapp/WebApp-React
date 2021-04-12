@@ -120,13 +120,19 @@
   margin-left: 10px;
 }
 
-.container_cards {
-  display: "block";
-  padding: "20px";
+.container_cards{
+  display: flex;
+  padding: 20px;
   flex-wrap: wrap;
   justify-content: flex-start;
   width: fit-content;
 }
 .container_cards .card {
   margin: 20px;
+}
+.container_cards .card{
+  margin:20px;
+}
+.paymentButtons button{
+  margin:10px;
 }

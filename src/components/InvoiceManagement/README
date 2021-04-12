@@ -1,0 +1,18 @@
+Manage Invoice Page
+- Main Div(contains all)
+- Select All(checkbox), Delete, Sort, Filter,
+- Cards Container
+- Card -> Click on Name(generate pdf), Select checkbox, Details, Share btn's
+- Add new invoice
+
+
+
+- file names
+- class name s and id -camel case
+- logs,comments -remove
+
+# STAFF MGT
+
+- Decrease size
+- Send btn ->
+- Mobile Responsive Design
