@@ -9,6 +9,7 @@ import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
 import "./card.css";
 import InventoryItem from "./InventoryItem";
+import ApiCalls from "../../containers/apiCalls";
 
 let items = [
   { productName: "Brush", productPrice: "20", productQuantity: "5" },
@@ -33,6 +34,7 @@ const Inventory = (props) => {
         setItems(vals);
         setAllItemsList(vals);
       });
+    new ApiCalls().apiCall("invoice");
   }, []);
 
   let defaultProps = {
@@ -62,11 +64,11 @@ const Inventory = (props) => {
         <div className="sideContent">
           <h2 className="serviceHeader">Inventory</h2>
           <form>
-          {/* select all, delete,sort, filter  */}
+            {/* select all, delete,sort, filter  */}
 
-          {/* Select All */}
+            {/* Select All */}
 
-          {/* Delete  */}
+            {/* Delete  */}
 
             <input
               className="input_search inpIcon"

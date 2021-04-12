@@ -5,6 +5,8 @@ import sidebarFinIcon from "../../assets/sidebarFinIcon.svg";
 import sidebarInvtIcon from "../../assets/sidebarInvtIcon.svg";
 import sidebarStaffIcon from "../../assets/sidebarStaffIcon.svg";
 import sidebarInvoIcon from "../../assets/sidebarInvoIcon.svg";
+import sidebarRemainIcon from "../../assets/sidebarRemainIcon.svg";
+import sidebarDueIcon from "../../assets/sidebarDueIcon.svg";
 
 import "./Sidebar.css";
 function Sidebar() {
@@ -38,17 +40,17 @@ function Sidebar() {
           </Link>
         </li>
         <li className="li_side ">
-        <Link to="/remainders">
-          <img src={sidebarFinIcon}></img>
-          Remainders
-        </Link>
-      </li>
-      <li className="li_side ">
-      <Link to="/dues">
-        <img src={sidebarFinIcon}></img>
-         Dues
-      </Link>
-    </li>
+          <Link to="/remainders">
+            <img src={sidebarRemainIcon}></img>
+            Remainders
+          </Link>
+        </li>
+        <li className="li_side ">
+          <Link to="/dues">
+            <img src={sidebarDueIcon}></img>
+            Dues
+          </Link>
+        </li>
 
         <li className="li_side">
           <Link to="/staff">

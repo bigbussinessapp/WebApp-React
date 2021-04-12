@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Header1 from "../Header1/Header1";
 import getDetails from "../InvoiceGeneration/InvoicePDF";
 import Sidebar from "../Sidebar/Sidebar";
 import "./card.css";
 import "./InvoiceManagement.css";
+import ApiCalls from "../../containers/apiCalls";
 
 const InvoiceManagement = () => {
   const [sortValue, setSortValue] = useState(true);
 
   let lowSortFn = (a, b) => a.receiver.name < b.receiver.name;
   let highSortFn = (a, b) => a.receiver.name > b.receiver.name;
+
+  useEffect(() => {
+    console.log("App loading");
+    new ApiCalls()
+      .apiCall("invoice", "get")
+      .then((res) => {
+        console.log("This is inventory data from backend");
+        console.log(res);
+      })
+      .catch((resolve) => {
+        console.log(resolve);
+      });
+  }, []);
 
   const SampleInvoiceData = [
     {

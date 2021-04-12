@@ -44,6 +44,7 @@
   margin-top: 1em;
 }
 .option_button {
+  background-color: #fbc343 !important;
   outline: none;
   border: none;
   border-radius: 10px;
@@ -96,7 +97,7 @@
 .feature_dropdown a {
   color: white;
   padding: 12px 16px;
-  text-decoration: none;
+  /* text-decoration: none; */
   display: block;
   border: none;
   background: none;
@@ -111,6 +112,7 @@
 
 .feature_dropdown a:hover {
   background-color: #fbc343;
+  text-decoration: none;
 }
 .feature:hover .feature_dropdown {
   display: block;
@@ -167,6 +169,12 @@
 }
 @media only screen and (max-width: 400px) {
   .li_end p {
-    font-size: 0.9em;
+    font-size: 1.1em;
+  }
+  .options_dropdown {
+    right: 0%;
+  }
+  .feature_dropdown {
+    right: 5%;
   }
 }

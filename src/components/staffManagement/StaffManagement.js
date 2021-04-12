@@ -1,12 +1,10 @@
 import React, { useState, useReducer, useEffect } from "react";
 import PayRollBreakFC from "./PayRollBreakFC";
-
 import { connect } from "react-redux";
 import firebase from "../../containers/Firebase";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
 import store from "../redux-state-management/store";
-
 import StaffMemberCards from "./StaffMemberCards";
 import "./css/StaffManagement.css";
 
@@ -31,21 +29,27 @@ const StaffManagement = () => {
   return (
     <div className="">
       <Header1 />
-      <div className='web_body'>
+      <div className="web_body">
         <Sidebar />
-        <div className='sideContent'>
-          <h2 className='serviceHeader'>Staff Payroll</h2>
+        <div className="sideContent">
+          <h2 className="serviceHeader">Staff Payroll</h2>
 
-          <div className="container_cards"
+          <div
+            className="container_cards"
             style={{
-              width: showPayrollView ? "40vw" : "95vw",
-              
+              // width: showPayrollView ? "40vw" : "95vw",
+              width: "fit-content",
+
+              height: "50vw",
+              overflowY: "scroll",
             }}
             onClick={() => {
-              document.getElementsByClassName("container_cards")[0].style.display =
-                "block";
-              document.getElementsByClassName("container_cards")[0].style.width =
-                "fit-content";
+              document.getElementsByClassName(
+                "container_cards"
+              )[0].style.display = "block";
+              document.getElementsByClassName(
+                "container_cards"
+              )[0].style.width = "fit-content";
             }}
           >
             {employeesData.map((staffMembers) => {
@@ -61,12 +65,10 @@ const StaffManagement = () => {
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
 const mapStateToProps = (state) => ({ employeeData: state.employeeData });
 
 export default connect(mapStateToProps)(StaffManagement);
-
-//

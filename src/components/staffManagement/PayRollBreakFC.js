@@ -83,8 +83,10 @@ const PayRollBreakFC = (props) => {
         <p>PaySlip Month:{selectedMonth} </p>
         <p>Year: {selectedYear}</p>
         <p>Total Amount : {totalAmount}</p>
+        <div className='paymentButtons'>
         <Button onClick={() => pay("advance")}>Pay Advance</Button>
         <Button onClick={() => pay("salary")}>Pay Salary</Button>
+        </div>
       </div>
 
       <div id="model">
@@ -99,7 +101,7 @@ const PayRollBreakFC = (props) => {
                 setShowModel((prev) => !prev);
               }}
             >
-              <Modal.Title>Modal title</Modal.Title>
+              <Modal.Title>Payment Screen</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
@@ -117,11 +119,9 @@ const PayRollBreakFC = (props) => {
               ></input>
             </Modal.Body>
 
-            <Modal.Footer>
+            <Modal.Footer >
               <Button variant="secondary">Yes</Button>
-              <Button variant="primary" onClick={() => setPaymentView(false)}>
-                No
-              </Button>
+              <Button variant="primary" onClick={() => setPaymentView(false)}>No</Button>
             </Modal.Footer>
           </Modal.Dialog>
         ) : (

@@ -33,11 +33,11 @@ function Header() {
           className="li_header1"
           onMouseEnter={openNav}
         >
-          &#9776;
+          <img className="li_img" src={logo} alt="li_img"></img>
         </li>
         <li className="li_header1">
           <Link to="/">
-            <img className="li_img" src={logo} alt="li_img"></img>
+            <img className="li_img li_img_logo" src={logo} alt="li_img"></img>
           </Link>
         </li>
 
@@ -58,7 +58,7 @@ function Header() {
           <i class="fas fa-blog"></i>
         </li>
       </ul>
-      <div id="mySidenav" class="sidenav" onMouseLeave={closeNav}>
+      <div id="mySidenav" class="sidenav" onClick={closeNav}>
         <a href="#" className="closebtn">
           &times;
         </a>

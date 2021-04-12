@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import { addInventoryItem } from "../redux-state-management/actionCreators";
 import { connect } from "react-redux";
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import "./card.css";
 import firebase from "../../containers/Firebase";
 
@@ -14,57 +13,50 @@ const InventoryItem = (props) => {
   let [price, setProductPrice] = useState(props.price);
   let [quantity, setProductQuantity] = useState(props.quantity);
   let id = useState(props.id);
-  let [showModal, setShowModal] = useState(false); 
+  let [showModal, setShowModal] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(props.prodName);
     setProductName(props.prodName);
     setProductPrice(props.price);
     setProductQuantity(props.quantity);
-    if(props.valChange=='Delete'){
+    if (props.valChange == "Delete") {
       setShowModal(false);
     }
-  },[]);
+  }, []);
   function handleShow() {
-    if(props.valChange==='Delete'){
+    if (props.valChange === "Delete") {
       setShowModal(false);
-    }
-    else
-      setShowModal(true);
+    } else setShowModal(true);
   }
 
   function handleClose() {
     setShowModal(false);
   }
-  
-  function firebaseAction(data){
 
-    if(props.itemState.includes('Add')){
+  function firebaseAction(data) {
+    if (props.itemState.includes("Add")) {
       delete data.id;
-      firebase.database.ref('Users/uid1').child('inventory').push(data);
-    }
-      
-    else{      
-      let id =  data.id[0];
+      firebase.database.ref("Users/uid1").child("inventory").push(data);
+    } else {
+      let id = data.id[0];
       delete data.id;
-      firebase.database.ref('Users/uid1/inventory').child(id).update(data);
+      firebase.database.ref("Users/uid1/inventory").child(id).update(data);
     }
-      
 
     props.submission(data);
     setShowModal(false);
   }
 
   return (
-    <div className='buttonStyle'>
+    <div className="buttonStyle">
       <div style={{ padding: "10px" }}>
         <Button variant="primary" onClick={handleShow} size="sm">
-        {(props.valChange==='Delete')?<DeleteIcon/>:''}
-          {(props.valChange==='Update')?<EditIcon/>:''} 
-          {(props.valChange==='Add')?<AddCircleOutlineIcon/>:''}  
-          {'    '}
-        {props.itemState}
-          
+          {props.valChange === "Delete" ? <DeleteIcon /> : ""}
+          {props.valChange === "Update" ? <EditIcon /> : ""}
+          {props.valChange === "Add" ? <AddCircleOutlineIcon /> : ""}
+          {"    "}
+          {props.itemState}
         </Button>
       </div>
       <Modal show={showModal} onHide={handleClose}>
@@ -110,9 +102,8 @@ const InventoryItem = (props) => {
                 name: name,
                 price: price,
                 quantity: quantity,
-                id:id
-              })
-              
+                id: id,
+              });
             }}
           >
             {" "}

@@ -1,24 +1,32 @@
 .remainder_main {
-  display: flex;
-  flex-direction: row;
-  
+  overflow-y: scroll;
+  height: 70vh;
 }
 .remainder_main > h3 {
   font-weight: lighter;
 }
-.remainder_icon{
+.remainder_icon {
   width: 40%;
   float: right;
 }
-.financeCard{
+.financeCard {
   padding: "30px";
-  border: "2px solid black";
+  border: "1px solid black";
   min-width: 10vw;
-  margin:'10px';
+  margin: "10px";
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  margin: "10px";
   /* display: contents; */
   box-sizing: border-box;
 }
-.remainderCardsView{
+.remainderCardsView {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;

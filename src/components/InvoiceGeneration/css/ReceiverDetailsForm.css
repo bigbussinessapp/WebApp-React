@@ -1,4 +1,17 @@
-#add_paying--button{
+#add_paying--button {
   background-color: gold;
-  float:right;
+  float: right;
+}
+
+@media only screen and (max-width: 450px) {
+  .receive_form {
+    display: flex;
+    flex-direction: column;
+  }
+  .receive_form > select {
+    width: fit-content;
+  }
+  #add_paying--button {
+    width: fit-content;
+  }
 }

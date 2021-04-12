@@ -56,8 +56,8 @@ const ReceiverDetailsForm = (props) => {
   const [SelectInvoiceValue, setSelectInvoiceValue] = useState("default");
 
   return (
-    <div>
-      <legend>{formname.toUpperCase()}</legend> {"    "}
+    <div className="receive_form">
+      <legend>{formname.toUpperCase()}</legend>{" "}
       <select
         name="invoice_names"
         id="invoice_names--select"
