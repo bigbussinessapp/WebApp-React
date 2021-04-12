@@ -59,6 +59,9 @@
   /* padding: 0px 5px 0px 0px; */
   /* justify-content: center; */
 }
+.join_home_button {
+  cursor: pointer;
+}
 .join_home_button > p {
   padding: 10px 5px 0px 5px;
   font-size: 1.3em;
