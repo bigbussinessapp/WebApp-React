@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./newRemainder.css";
 
 const NewReminder = ({ onSaveReminder }) => {
   const [title, setName] = useState("");
@@ -13,14 +14,20 @@ const NewReminder = ({ onSaveReminder }) => {
       alert("Please add a name!");
       return;
     }
-    onSaveReminder({ title, amount, paymentType, reminderDate, status: 'Unpaid' });
+    onSaveReminder({
+      title,
+      amount,
+      paymentType,
+      reminderDate,
+      status: "Unpaid",
+    });
     setName("");
     setAmount("");
     setDate("");
   };
 
   return (
-    <div style={{ margin: "30px" }}>
+    <div style={{ margin: "30px" }} className="plus_popup">
       <form onSubmit={onSubmit}>
         <div className="row" style={{ flexWrap: "nowrap" }}>
           <label className="col-2.5">
