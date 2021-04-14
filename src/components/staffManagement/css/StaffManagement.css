@@ -81,6 +81,7 @@
   color: #5273eb;
   border: none;
   padding-left: 15px;
+  cursor: default;
 }
 
 #emp_list_container .selected {
@@ -120,7 +121,7 @@
   margin-left: 10px;
 }
 
-.container_cards{
+.container_cards {
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
@@ -130,9 +131,9 @@
 .container_cards .card {
   margin: 20px;
 }
-.container_cards .card{
-  margin:20px;
+.container_cards .card {
+  margin: 20px;
 }
-.paymentButtons button{
-  margin:10px;
+.paymentButtons button {
+  margin: 10px;
 }

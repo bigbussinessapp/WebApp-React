@@ -5,6 +5,7 @@ import Routes from "./components/Routes/Routes";
 import Header from "./components/Header/Header";
 import AuthContextProvider from "./containers/AuthContext";
 //Entry point for the App
+
 class App extends Component {
   render() {
     document.title = "Big Business App";

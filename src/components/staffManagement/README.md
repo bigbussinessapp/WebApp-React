@@ -1,0 +1,2 @@
+- [ ] Decrease size of the boxes
+- [ ] make it responsive
