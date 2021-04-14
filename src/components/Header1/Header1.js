@@ -7,6 +7,8 @@ import sidebarFinIcon from "../../assets/sidebarFinIcon.svg";
 import sidebarInvtIcon from "../../assets/sidebarInvtIcon.svg";
 import sidebarStaffIcon from "../../assets/sidebarStaffIcon.svg";
 import sidebarInvoIcon from "../../assets/sidebarInvoIcon.svg";
+import sidebarRemainIcon from "../../assets/sidebarRemainIcon.svg";
+import sidebarDueIcon from "../../assets/sidebarDueIcon.svg";
 
 function Header() {
   function openNav() {
@@ -22,16 +24,16 @@ function Header() {
     <div>
       <ul className="ul_main_header1">
         <li
+          className="li_header1"
           id="main"
           style={{
             textDecoration: "none",
             color: "white",
-            margin: "10px 10px 0px 30px",
             fontSize: "25px",
             display: "none",
           }}
           className="li_header1"
-          onMouseEnter={openNav}
+          onClick={openNav}
         >
           <img className="li_img" src={logo} alt="li_img"></img>
         </li>
@@ -41,17 +43,36 @@ function Header() {
           </Link>
         </li>
 
-        <li className="li_end_header1">
+        <li className="li_end_header1 li_end_web dot_menu">
+          <Link to="#" className="menu" style={{ textDecoration: "none" }}>
+            <i class="fas fa-ellipsis-v"></i>
+          </Link>
+          <div className="menu_dropdown">
+            <a href="/#contact_id" style={{ textDecoration: "none" }}>
+              <p>Contact Us</p>
+            </a>
+            <a href="/#blog_id" style={{ textDecoration: "none" }}>
+              <p>Blogs</p>
+            </a>
+            <Link to="/page">
+              <i class="fas fa-user-circle"></i>
+            </Link>
+          </div>
+        </li>
+        <li className="li_end_header1 li_end_header_1_home">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="li_end_header1 li_end_mobile">
           <Link to="/page">
             <i class="fas fa-user-circle"></i>
           </Link>
         </li>
-        <li className="li_end_header1">
+        <li className="li_end_header1 li_end_mobile">
           <a href="/#contact_id" style={{ textDecoration: "none" }}>
             <p>Contact Us</p>
           </a>
         </li>
-        <li className="li_end_header1">
+        <li className="li_end_header1  li_end_mobile">
           <a href="/#blog_id" style={{ textDecoration: "none" }}>
             <p>Blogs</p>
           </a>
@@ -69,15 +90,33 @@ function Header() {
           </Link>
         </li>
         <li className="li_side">
+          <Link to="/invoicemanage">
+            <img src={sidebarStaffIcon}></img>
+            Invoice 2
+          </Link>
+        </li>
+        <li className="li_side">
           <Link to="/inventory">
             <img src={sidebarInvtIcon}></img>
             Inventory
           </Link>
         </li>
         <li className="li_side ">
-          <Link to="/mainfinance">
+          <Link to="/transactions">
             <img src={sidebarFinIcon}></img>
-            Finance
+            Transactions
+          </Link>
+        </li>
+        <li className="li_side ">
+          <Link to="/remainders">
+            <img src={sidebarRemainIcon}></img>
+            Remainders
+          </Link>
+        </li>
+        <li className="li_side ">
+          <Link to="/dues">
+            <img src={sidebarDueIcon}></img>
+            Dues
           </Link>
         </li>
 
@@ -85,6 +124,12 @@ function Header() {
           <Link to="/staff">
             <img src={sidebarStaffIcon}></img>
             Staff
+          </Link>
+        </li>
+        <li className="li_side">
+          <Link to="/admin">
+            <img src={sidebarStaffIcon}></img>
+            Staff 2
           </Link>
         </li>
       </div>

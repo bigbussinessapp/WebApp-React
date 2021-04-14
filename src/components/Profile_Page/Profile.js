@@ -1,13 +1,19 @@
 import React from "react";
 import "./Profile.css";
 import profileAvtar from "../../assets/profileAvtar.svg";
+import leftLeaves from "../../assets/leftLeaves.svg";
+import rightLeaves from "../../assets/rightLeaves.svg";
 // import Avtar from "../../assets/avtar.webp";
 
 function Profile(props) {
   return (
     <div className="profile">
-      <img src={profileAvtar} className="profile_img"></img>
+      <img className="left_leave_home" src={leftLeaves}></img>
+      <img className="right_leave" src={rightLeaves}></img>
       <div className="user_info">
+        <div className="user_image">
+          <img src={profileAvtar}></img>
+        </div>
         <div className="profile_css">
           <div className="profile_css_name">
             <i class="fas fa-user"></i>
@@ -21,13 +27,6 @@ function Profile(props) {
             <p>E-mail:</p>
           </div>
           <p>{props.emailId}</p>
-        </div>
-        <div className="profile_css">
-          <div className="profile_css_name">
-            <i class="fas fa-mobile"></i>
-            <p>Mobile:</p>
-          </div>
-          <p>{props.mobileNumber}</p>
         </div>
       </div>
 
@@ -45,6 +44,13 @@ function Profile(props) {
             <p>Organization Type:</p>
           </div>
           <p>{props.businessType}</p>
+        </div>
+        <div className="profile_css">
+          <div className="profile_css_name">
+            <i class="fas fa-mobile"></i>
+            <p>Mobile:</p>
+          </div>
+          <p>{props.mobileNumber}</p>
         </div>
 
         <button className="profile_button">Update</button>

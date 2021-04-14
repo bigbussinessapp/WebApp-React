@@ -87,7 +87,8 @@
 .feature_dropdown {
   display: none;
   position: absolute;
-
+  overflow-y: scroll;
+  height: 60vh;
   background-color: #5273eb;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -176,5 +177,10 @@
   }
   .feature_dropdown {
     right: 5%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .li_end a {
+    padding: 14px 0px 16px 0px;
   }
 }
