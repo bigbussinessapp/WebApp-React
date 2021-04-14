@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css/Invoice.css";
-import getDetails from "./InvoicePDF";
+import getDetails from "./GeneratePDF";
 import ItemDetailsForm from "./ItemDetailsForm";
 import ItemDetailsTable from "./ItemDetailsTable";
 import ReceiverDetailsForm from "./ReceiverDetailsForm";
@@ -8,7 +8,7 @@ import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
 export const InvoiceContext = React.createContext();
 
-const Invoice = () => {
+const InvoiceGeneration = () => {
   const receiverSchema = {
     id: 0,
     name: "",
@@ -144,4 +144,4 @@ const Invoice = () => {
   );
 };
 
-export default Invoice;
+export default InvoiceGeneration;

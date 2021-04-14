@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Header1 from "../Header1/Header1";
-import getDetails from "../InvoiceGeneration/InvoicePDF";
+import getDetails from "../InvoiceGeneration/GeneratePDF";
 import Sidebar from "../Sidebar/Sidebar";
 import "./card.css";
 import "./InvoiceManagement.css";
@@ -67,17 +67,8 @@ const InvoiceManagement = () => {
   const [InvoiceData, setInvoiceData] = useState(
     SampleInvoiceData.sort(highSortFn)
   );
-  console.log(`InvoiceData -> `, InvoiceData);
-
-  // Array of ID's that are selected
-  const [SelectedInvoiceId, setSelectedInvoiceId] = useState([]);
-  // console.log(`SelectedInvoiceId -> ${SelectedInvoiceId}`);
-  console.log(SelectedInvoiceId);
 
   const handleAddInvoice = (newInvoice) => {
-    console.log("Working", newInvoice);
-    // console.log([...newInvoice.files].map((item) => item.name));
-    console.log(...newInvoice.files);
     const InvoiceObjectArray = [...newInvoice.files].map((file) => {
       if (file.size / (1024 * 1024) < 2) {
         let d = new Date(file.lastModified);
@@ -109,30 +100,7 @@ const InvoiceManagement = () => {
       ...InvoiceData,
       ...[...InvoiceObjectArray.filter((file) => file !== undefined)],
     ]);
-    console.log(InvoiceData);
   };
-  const RemoveInvoice = (id) =>
-    setInvoiceData(
-      InvoiceData.filter((invoiceItem) => invoiceItem.InvoiceId !== id)
-    );
-  const handleDeleteInvoice = () => {
-    SelectedInvoiceId.map((id) => {
-      console.log(`id -> ${id}\nInvoiceData -> `, InvoiceData);
-      RemoveInvoice(id);
-    });
-    setSelectedInvoiceId([]);
-  };
-
-  const handleAddId = (id) => setSelectedInvoiceId([...SelectedInvoiceId, id]);
-  const handleRemoveId = (id) =>
-    setSelectedInvoiceId(
-      SelectedInvoiceId.filter((InvoiceId) => InvoiceId !== id)
-    );
-  const handleAddAllId = () => {
-    InvoiceData.map((item) => handleAddId(item.InvoiceId));
-  };
-
-  const [CheckInvoiceCard, setCheckInvoiceCard] = useState(false);
 
   // useEffect(() => {
   //   effect
@@ -152,24 +120,6 @@ const InvoiceManagement = () => {
           {/* select_all, delete, sort, filter bar */}
           <div className="container_main_right">
             <div id="search_filter_add_bar" className="item3">
-              {/* select_all */}
-              <label htmlFor="select_all--checkbox">
-                <input
-                  type="checkbox"
-                  name="select_all"
-                  id="select_all--checkbox"
-                  onChange={() => handleAddAllId()}
-                />
-                <span>&nbsp;</span>Select All
-              </label>
-
-              {/* delete */}
-              <input
-                className="invoiceBtn"
-                type="button"
-                value="Delete"
-                onClick={() => handleDeleteInvoice()}
-              />
               {/* sort */}
               <input
                 className="invoiceBtn"
@@ -177,7 +127,6 @@ const InvoiceManagement = () => {
                 value="Sort"
                 onClick={() => {
                   setSortValue(sortValue ? false : true);
-                  console.log("clicked on sort", sortValue);
                   setInvoiceData(
                     InvoiceData.sort(sortValue ? lowSortFn : highSortFn)
                   );
@@ -198,18 +147,6 @@ const InvoiceManagement = () => {
                       >
                         {item.receiver.name}.pdf
                       </Card.Title>
-                      <Card.Text>
-                        <input
-                          type="checkbox"
-                          name={`${item.InvoiceId}_ic`}
-                          id="card_select--checkbox"
-                          onChange={(event) => {
-                            event.target.checked
-                              ? handleAddId(item.InvoiceId)
-                              : handleRemoveId(item.InvoiceId);
-                          }}
-                        />
-                      </Card.Text>
                     </div>
                     <button className="invoice_card_btn invoiceBtn">
                       Details

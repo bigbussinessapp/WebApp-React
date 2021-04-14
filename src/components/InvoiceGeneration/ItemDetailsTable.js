@@ -1,7 +1,7 @@
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import React, { useContext } from "react";
 import "./css/ItemDetailsTable.css";
-import { InvoiceContext } from "./Invoice";
+import { InvoiceContext } from "./InvoiceGeneration";
 
 const ItemDetailsTable = (props) => {
   const { itemInputs } = props;

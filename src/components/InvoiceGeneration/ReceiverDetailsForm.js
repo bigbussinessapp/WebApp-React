@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 // import "../inventoryManagement/card.css";
 import "./css/ReceiverDetailsForm.css";
-import { InvoiceContext } from "./Invoice";
+import { InvoiceContext } from "./InvoiceGeneration";
 
 const ReceiverDetailsForm = (props) => {
   const { handleReceiverChange } = useContext(InvoiceContext);

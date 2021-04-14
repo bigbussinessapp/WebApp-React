@@ -86,13 +86,13 @@
 //   doc.save(`${name.toUpperCase()}.pdf`);
 // }
 
-function createPdf() {
-  alert("In create pdf--DOMPurify error");
+function generatePdf() {
+  alert("In generate pdf--DOMPurify error");
 }
 
 export default function getDetails(InvoiceObject) {
   // const InvoiceObject = props;
   const { InvoiceId, CreationDate, receiver, itemInputs } = InvoiceObject;
-  createPdf(InvoiceId, CreationDate, receiver, itemInputs);
+  generatePdf(InvoiceId, CreationDate, receiver, itemInputs);
   // AddInvoiceData(InvoiceObject);
 }

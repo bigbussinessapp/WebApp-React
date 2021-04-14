@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 import "./css/ItemDetailsForm.css";
-import { InvoiceContext } from "./Invoice";
+import { InvoiceContext } from "./InvoiceGeneration";
 
 const ItemDetailsForm = (props) => {
   const { item } = props;
   const { handleItemInputsAdd, handleItemChange } = useContext(InvoiceContext);
-  console.log(`item - ${item.name}`);
 
   // get this item array from JSON(inventory)
   const inventoryItems = [
@@ -31,19 +30,14 @@ const ItemDetailsForm = (props) => {
     },
   ];
   const [ItemArray, setReceiverArray] = useState(inventoryItems);
-  console.log(ItemArray);
-
   // const handleChange = (event) => {
   //   const target = event.target;
   //   const name = target.name;
   //   const objvalue = target.value;
-  //   console.log(name, objvalue);
   //   handleItemChange({ [name]: objvalue });
-  //   console.log(item);
   // };
 
   const [SelectItemValue, setSelectItemValue] = useState("");
-  console.log(SelectItemValue);
   // handleItemChange({ ...SelectItemValue });
   const handleChange = () => {
     handleItemChange({ ["name"]: SelectItemValue.name });
@@ -66,13 +60,9 @@ const ItemDetailsForm = (props) => {
                 defaultValue={SelectItemValue.name}
                 onChange={(event) => {
                   let index = event.target.value;
-                  console.log(index, ItemArray[index]);
-                  console.log(ItemArray[index].name);
                   setSelectItemValue(ItemArray[index]);
-                  console.log(`SelectItemValue - ${SelectItemValue}`);
                   // handleItemChange({ ...SelectItemValue });
                   handleChange();
-                  console.log(item);
                 }}
               >
                 <option value="default" selected disabled>
@@ -115,7 +105,6 @@ const ItemDetailsForm = (props) => {
       <button
         id="add_to_invoice--button"
         onClick={() => {
-          console.log("Clicked");
           handleItemInputsAdd();
         }}
       >

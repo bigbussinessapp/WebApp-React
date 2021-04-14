@@ -11,7 +11,7 @@ import { TransactionsTable } from "../Finance/TransactionTable/TransactionsTable
 import Dashboard from "../Home/Dashboard";
 import Home from "../Home/Home";
 import Inventory from "../inventoryManagement/Invetory";
-import Invoice from "../InvoiceGeneration/Invoice";
+import InvoiceGeneration from "../InvoiceGeneration/InvoiceGeneration";
 import InvoiceManagement from "../InvoiceManagement/InvoiceManagement";
 
 import LoginMain from "../login/LoginMain";
@@ -43,7 +43,7 @@ function Routes() {
       <Route exact path="/Page" component={Profile_Page} />
       <Route exact path="/invoicemanage" component={InvoiceManagement} />
       <Route exact path="/mainfinance" component={MainFinance} />
-      <Route exact path="/invoice" component={Invoice} />
+      <Route exact path="/invoice" component={InvoiceGeneration} />
       <Route exact path="/inventory" component={Inventory} />
       <Route exact path="/staff" component={StaffManagement} />
       <Route exact path="/admin" component={StaffAdminDashboard} />
