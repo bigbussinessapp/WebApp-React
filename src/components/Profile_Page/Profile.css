@@ -3,12 +3,10 @@
   padding: 100px;
   justify-content: space-around;
 }
-.profile_img {
-  position: absolute;
-  z-index: -1;
-  top: 15%;
+.user_image > img {
   width: 7em;
   height: auto;
+  margin-bottom: 50px;
 }
 .user_info {
   display: flex;
@@ -39,35 +37,25 @@
 }
 .profile_button {
   outline: none;
-  border-radius: 10px;
-  background-color: #2f2e41;
+  border-radius: 20px;
+  padding: 5px 70px 5px 70px;
+  background-color: #5273eb !important;
   color: white;
   border: none;
 }
-/* .Profile_Main {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  margin-bottom: 50px;
+.business_info {
+  margin-top: 50px;
 }
-.Profile_Main > h1 {
-  margin: 10px;
+.left_leave_home {
+  position: absolute;
+  z-index: -1;
+  top: 40%;
+  left: 0;
 }
-.Profile_Main > p {
-  font-size: 1.5em;
-  color: #393e46;
-  margin: 20px;
+.right_leave {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  width: 10vw !important;
+  height: auto;
 }
-.Profile_Main > p:hover {
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-.Profile_Type {
-  background-color: #393e46;
-  color: white !important;
-}
-.Profile_Img {
-  width: fit-content;
-} */

@@ -10,6 +10,7 @@ import Header from "../Header/Header";
 import Footer from "./Footer";
 import LoginMain from "../login/LoginMain";
 import Toast from "react-bootstrap/Toast";
+
 import { AuthContext } from "../../containers/AuthContext";
 
 function Home() {
