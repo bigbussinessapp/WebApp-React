@@ -1,7 +1,7 @@
-// import jsPDF from "./jspdf.umd.min.js";
+// import jsPDF from "jspdf";
 // import "jspdf-autotable";
 
-// function createPdf(InvoiceId, CreationDate, ReceiverDetails, ItemInputsArray) {
+// function generatePdf(InvoiceId, CreationDate, ReceiverDetails, ItemInputsArray) {
 //   var doc = new jsPDF();
 
 //   var pageSize = doc.internal.pageSize;
