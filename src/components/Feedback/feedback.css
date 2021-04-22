@@ -1,0 +1,82 @@
+.feedback_head {
+  margin: 50px 100px 50px 100px;
+}
+.feedback_head > p {
+  width: 70%;
+  color: #222831;
+}
+.feedback_rating {
+  margin: 50px 100px 50px 100px;
+}
+.feedback_rating > label {
+  color: #2a2e35;
+  font-weight: normal;
+  margin-right: 200px;
+  font-size: 1.3em;
+}
+.feedback_section {
+  margin: 50px 100px 50px 100px;
+}
+.feedback_name {
+  margin: 50px 100px 50px 100px;
+}
+.fullname {
+  display: flex;
+  flex-direction: row;
+}
+.fname {
+  display: flex;
+  flex-direction: column;
+  margin-right: 200px;
+}
+.fname > input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.fname > label {
+  color: #2a2e35;
+  font-weight: normal;
+}
+.lname {
+  display: flex;
+  flex-direction: column;
+}
+.lname > input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.lname > label {
+  color: #2a2e35;
+  font-weight: normal;
+}
+.feedback_email {
+  margin: 50px 100px 50px 100px;
+}
+.feedback_email > input {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.feedback_email > label {
+  color: #2a2e35;
+  font-weight: normal;
+}
+.feedback_submit {
+  background-color: #5374eb;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px 100px 45%;
+  /* margin-bottom: 100px; */
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
