@@ -19,17 +19,15 @@ function Home() {
   return (
     <div className="home_main">
       <Header />
-      <img
+      {/* <img
         src={aboutIcon}
         className="head_main_icon"
         alt="head_main_icon"
-      ></img>
+      ></img> */}
 
       <div className="head">
         <div className="head_data">
-          <h2>
-            Big business is building an ecosystem for trustworthy businesses.
-          </h2>
+          <h2>Building An Ecosystem For Trustworthy Businesses.</h2>
           <div className="join_home">
             <div className="join_home_button">
               <img src={joinIcon}></img>

@@ -50,11 +50,11 @@
 .finance_data > p {
   font-size: 1.4em;
 }
-.finance > h2 {
+.finance_data > h2 {
   font-size: 2em;
   font-weight: bolder;
 }
-.right_leave {
+.right_leave_feature {
   position: absolute;
   right: 0;
   z-index: -1;
@@ -170,5 +170,8 @@
   .staff > img {
     width: 60vw;
     margin-bottom: 25px;
+  }
+  .right_leave_feature {
+    width: 25vw !important;
   }
 }

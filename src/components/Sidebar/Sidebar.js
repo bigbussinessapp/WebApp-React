@@ -24,25 +24,25 @@ function Sidebar() {
         <li className="li_side">
           <Link to="/invoicemanage">
             <img src={sidebarStaffIcon}></img>
-            Invoice 2
+            Invoice2
           </Link>
         </li>
         <li className="li_side">
           <Link to="/inventory">
             <img src={sidebarInvtIcon}></img>
-            Inventory
+          Inventory
           </Link>
         </li>
         <li className="li_side ">
           <Link to="/transactions">
             <img src={sidebarFinIcon}></img>
-            Transactions
+          Transaction
           </Link>
         </li>
         <li className="li_side ">
           <Link to="/remainders">
             <img src={sidebarRemainIcon}></img>
-            Remainders
+          Remainders
           </Link>
         </li>
         <li className="li_side ">
@@ -61,7 +61,7 @@ function Sidebar() {
         <li className="li_side">
           <Link to="/admin">
             <img src={sidebarStaffIcon}></img>
-            Staff 2
+            Admin
           </Link>
         </li>
       </div>

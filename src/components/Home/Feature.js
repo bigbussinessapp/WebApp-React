@@ -54,7 +54,7 @@ function Feature() {
             expenses and incomes, including purchases and returns.
           </p>
         </div>
-        <img className="right_leave" src={rightLeaves}></img>
+        <img className="right_leave_feature" src={rightLeaves}></img>
       </div>
 
       <div className="staff">

@@ -13,7 +13,9 @@ import Home from "../Home/Home";
 import Inventory from "../inventoryManagement/Invetory";
 import Invoice from "../InvoiceGeneration/Invoice";
 import InvoiceManagement from "../InvoiceManagement/InvoiceManagement";
-
+import Faq from "../Faq/Faq";
+import Task from "../Task/Tasks";
+import Feedback from "../Feedback/Feedback";
 import LoginMain from "../login/LoginMain";
 import RegisterMain from "../login/RegisterMain";
 import NotFound from "../NotFound";
@@ -23,6 +25,7 @@ import RegistrationPage from "../Registration/Registration_Page";
 import StaffAdminDashboard from "../staffManagement/StaffAdminDashboard";
 import StaffManagement from "../staffManagement/StaffManagement";
 import PrivateRoute from "./PrivateRoute";
+
 // this function routes through different components by checking urlpath.
 function Routes() {
   return (
@@ -35,7 +38,9 @@ function Routes() {
       <Route exact path="/FeaturesBigBusiness" component={Feature} />
       <Route exact path="/BusinessScore" component={Score} />
       <Route exact path="/" component={Home} />
-      {/* Complete */}
+
+      <Route exact path="/task" component={Task} />
+      <Route exact path="/feedback" component={Feedback} />
       <Route exact path="/dues" component={PaymentDues} />
       <Route exact path="/remainders" component={PaymentReminders} />
       <Route exact path="/transactions" component={TransactionsTable} />
@@ -47,7 +52,8 @@ function Routes() {
       <Route exact path="/inventory" component={Inventory} />
       <Route exact path="/staff" component={StaffManagement} />
       <Route exact path="/admin" component={StaffAdminDashboard} />
-      {/* Remain  */}
+      <Route exact path="/faq" component={Faq} />
+
       <Route exact path="/register" component={RegisterMain} />
       <Route exact path="/login" component={LoginMain} />
       <Route exact path="/dashboard" component={Dashboard} />

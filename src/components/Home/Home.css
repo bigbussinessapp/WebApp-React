@@ -11,12 +11,13 @@
 
 .head {
   display: flex;
-  margin: 100px;
+  margin: 150px 100px 100px 100px;
 }
 
 .head_data > h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 3.5vw;
+  font-size: 3.7vw;
+  color: #252a34;
   width: 50vw;
 }
 

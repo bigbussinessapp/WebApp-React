@@ -5,7 +5,10 @@
   overflow: hidden;
   background-color: #5273eb;
 }
-
+.li_img {
+  width: 4vw !important;
+  height: auto;
+}
 .li_header1 {
   float: left;
   font-size: 1.2em;
